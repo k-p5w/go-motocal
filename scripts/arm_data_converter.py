@@ -1498,13 +1498,10 @@ if __name__ == '__main__':
     txtWeponSSR=["txt_source","armData-ssr.txt"]
     txtWeponSR=["txt_source","armData-sr.txt"]
     txtImgWiki=["txt_source","armImageWikiURLList.txt"]
-    txtImgGame=["txt_source","armImageGameURLList.txt"]
-    pathSSR = os.path.join(*txtWeponSSR)
-    pathSR = os.path.join(*txtWeponSR)
-    pathImgWiki = os.path.join(*txtImgWiki)
-    pathImgGame = os.path.join(*txtImgGame)
+    txtImgGame=["txt_source","armImageGameURLList.txt"]    
 
 # コンソール出力する
+# Windows11で動くように変更した
     print(os.path.join(pathBase, *txtWeponSSR))
     json_data, image_wiki_url_list, image_game_url_list = processCSVdata(
         os.path.join(pathBase, *txtWeponSSR), json_data, image_wiki_url_list, image_game_url_list, True)
