@@ -1304,9 +1304,9 @@ SERIES = {
 ########################################################################################################################
 filename = inspect.getframeinfo(inspect.currentframe()).filename
 path = os.path.dirname(os.path.abspath(filename))
-print("start-print.")
 pathBase=os.path.dirname(path)
-print(os.path.dirname(path))
+# print("start-print.")
+# print(os.path.dirname(path))
 # json translation
 translation = json.load(open(os.path.join(
     path, "../txt_source/arm-translation.json"), "r", encoding="utf-8"))
@@ -1341,6 +1341,7 @@ def processCSVdata(csv_file_name, json_data, image_wiki_url_list, image_game_url
     for row in mycsv:
         newdict = OrderedDict()
         row_length = len(row)
+        # 行がないとき
         if row_length <= 1:
             continue
 
@@ -1362,6 +1363,7 @@ def processCSVdata(csv_file_name, json_data, image_wiki_url_list, image_game_url
                 name = value.replace("&br;", "")
                 name = name.replace("[]", "")
                 newdict["ja"] = name
+                # 武器名を表示する
                 print(name)
             elif index == 3:
                 # element
@@ -1460,13 +1462,13 @@ def processCSVdata(csv_file_name, json_data, image_wiki_url_list, image_game_url
                 else:
                     newdict["hplv75"] = int(value)
             elif index == 17 and newdict["slvmax"] >= 15:
-                print("idx=17.")
+                # print("idx=17.")
                 if PROCESS_TYPE_SSR:
                     newdict["attacklv100"] = int(value)
                 else:
                     newdict["attacklv75"] = int(value)
             elif index == 18 and newdict["slvmax"] >= 20:
-                print("idx=18."+value)
+                # print("idx=18."+value)
                 newdict["hplv150"] = int(value)
             elif index == 19 and newdict["slvmax"] >= 20:
                 newdict["attacklv150"] = int(value)
@@ -1476,8 +1478,8 @@ def processCSVdata(csv_file_name, json_data, image_wiki_url_list, image_game_url
         if name in translation:
             newdict["en"] = translation[name]
         else:
-            print("missing translate", name)
-            newdict["en"] = name
+            print("missing translate/変換失敗.【TBD】", name)
+            newdict["en"] = "TBD"
 
         json_data[name] = newdict
         # Wiki

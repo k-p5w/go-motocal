@@ -57,6 +57,34 @@ TOPページ
 * データ最新化手順
 
 . 追加したい武器について、wikiの該当行をコピーし、txt_source/armData-ssr.txt の一番上に貼り付け
+. 武器名、属性を修正する
+
+....
+COLOR(red)
+↓
+&color(#ff0000)
+
+COLOR(orange)
+↓
+&color(#ff9900)
+
+COLOR(green)
+↓
+&color(#339966)
+
+COLOR(purple)
+↓
+&color(#800080)
+
+COLOR(brown)
+↓
+&color(#993300)
+
+COLOR(blue)
+↓
+&color(#3366ff)
+....
+
 . 変換スクリプトの実行
 
 ....
