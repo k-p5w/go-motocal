@@ -322,7 +322,7 @@ var RegisteredArm = CreateClass({
                 url: "./armData.json",
                 dataType: 'json',
                 cache: false,
-                timeout: 10000,
+                timeout: 30000,
                 success: function (data) {
                     resolve(data)
                 }.bind(this),
