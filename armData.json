@@ -4658,6 +4658,27 @@
         "imageURL": "./imgs/1040910200.png",
         "en": "Wrathfire Longblade"
     },
+    "[5凸]極マリシ烈火ノ太刀": {
+        "ja": "[5凸]極マリシ烈火ノ太刀",
+        "element": "fire",
+        "type": "katana",
+        "skill1": "strengthLL",
+        "skill2": "non",
+        "element2": "fire",
+        "skill3": "non",
+        "element3": "fire",
+        "minhp": 26,
+        "minattack": 400,
+        "hp": 225,
+        "attack": 3230,
+        "series": "none",
+        "slvmax": 15,
+        "maxlv": 150,
+        "hplv100": 168,
+        "attacklv100": 2420,
+        "imageURL": "./imgs/1040910200.png",
+        "en": "[4★] Wrathfire Longblade"
+    },
     "赤き熾炎の剣": {
         "ja": "赤き熾炎の剣",
         "element": "fire",
