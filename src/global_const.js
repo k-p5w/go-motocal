@@ -972,6 +972,7 @@ var skilltypes = {
     "magnaHPS": {name: "マグナ守護(小)", type: "magnaHP", amount: "S"},
     "magnaHPM": {name: "マグナ守護(中)", type: "magnaHP", amount: "M"},
     "magnaHPL": {name: "マグナ守護(大)", type: "magnaHP", amount: "L"},
+    "normalGirenL": {name: "通常技錬", type: "normalGiren", amount: "L"},
     "magnaFukashinS": {name: "マグナ不可侵(小)", type: "magnaFukashin", amount: "S"},
     "unknownHPS": {name: "アンノウン・VIT I(小)", type: "unknownHP", amount: "S"},
     "unknownHPM": {name: "アンノウン・VIT I(中)", type: "unknownHP", amount: "M"},

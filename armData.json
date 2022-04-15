@@ -4672,12 +4672,14 @@
         "hp": 225,
         "attack": 3230,
         "series": "none",
-        "slvmax": 15,
-        "maxlv": 150,
+        "slvmax": 20,
+        "maxlv": 200,
         "hplv100": 168,
         "attacklv100": 2420,
+        "hplv150": 199,
+        "attacklv150": 2795,
         "imageURL": "./imgs/1040910200.png",
-        "en": "[4★] Wrathfire Longblade"
+        "en": "[5★] Wrathfire Longblade"
     },
     "赤き熾炎の剣": {
         "ja": "赤き熾炎の剣",
@@ -22610,6 +22612,25 @@
         "maxlv": 100,
         "imageURL": "./imgs/1040912000.png",
         "en": "Soshu Masamune"
+    },
+    "第十二猪行槍": {
+        "ja": "第十二猪行槍",
+        "element": "fire",
+        "type": "spear",
+        "skill1": "normalGirenL",
+        "skill2": "normalS",
+        "element2": "fire",
+        "skill3": "non",
+        "element3": "fire",
+        "minhp": 37,
+        "minattack": 413,
+        "hp": 231,
+        "attack": 2431,
+        "series": "none",
+        "slvmax": 10,
+        "maxlv": 100,
+        "imageURL": "./imgs/1040216000.png",
+        "en": "TBD"
     },
     "暁": {
         "ja": "暁",

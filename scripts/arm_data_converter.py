@@ -287,6 +287,16 @@ skillnamelist["normalSetsuna"] = {
     u"憎悪の刹那": "dark"
 }
 
+skillnamelist["normalGirenL"] = {
+    u"紅蓮の技錬": "fire",
+    u"霧氷の技錬": "water",
+    u"地裂の技錬": "earth",
+    u"乱気の技錬": "wind",
+    u"天光の技錬": "light",
+    u"奈落の技錬": "dark"
+}
+
+
 skillnamelist["normalKatsumiS"] = {
     u"火の克己": "fire",
     u"水の克己": "water",
@@ -1047,7 +1057,8 @@ skillnamelist["exSensei"] = {
 }
 
 skillnamelist["strengthHaisuiM"] = {u"マジックチャージ": "light"}
-skillnamelist["unknownOtherBoukunL"] = {u"ミフネ流剣法・極意": "fire", u"インテリジェンス": "dark"}
+skillnamelist["unknownOtherBoukunL"] = {
+    u"ミフネ流剣法・極意": "fire", u"インテリジェンス": "dark"}
 skillnamelist["unknownOtherNiteS"] = {u"ミフネ流剣法・双星": "fire", u"デクステリティ": "dark"}
 
 # Baha
@@ -1094,7 +1105,7 @@ skillnamelist["akasha-spear"] = {u"虚栄の矛戟": "fire"}
 skillnamelist["akasha-axe"] = {u"虚勢の巌": "earth"}
 skillnamelist["akasha-wand"] = {u"虚飾の隻腕": "water"}
 skillnamelist["akasha-bow"] = {u"虚像の鋒鏑": "light"}
-#Covenant
+# Covenant
 skillnamelist["impervious-covenant"] = {u"不壊の誓約": "fire"}
 skillnamelist["victorious-covenant"] = {u"凱歌の誓約": "water"}
 skillnamelist["contentious-covenant"] = {u"修羅の誓約": "earth"}
@@ -1293,9 +1304,12 @@ SERIES = {
 ########################################################################################################################
 filename = inspect.getframeinfo(inspect.currentframe()).filename
 path = os.path.dirname(os.path.abspath(filename))
-
+print("start-print.")
+pathBase=os.path.dirname(path)
+print(os.path.dirname(path))
 # json translation
-translation = json.load(open(os.path.join(path, "../txt_source/arm-translation.json"), "r", encoding="utf-8"))
+translation = json.load(open(os.path.join(
+    path, "../txt_source/arm-translation.json"), "r", encoding="utf-8"))
 
 
 def skill_replace(skill):
@@ -1312,7 +1326,6 @@ def type_replace(armtype):
             return inner_armtype
     return "none"
 
-
 def processCSVdata(csv_file_name, json_data, image_wiki_url_list, image_game_url_list, PROCESS_TYPE_SSR=True):
     key_pattern = re.compile("\d+")
     key_pattern = re.compile("(\w+\.png)")
@@ -1320,7 +1333,9 @@ def processCSVdata(csv_file_name, json_data, image_wiki_url_list, image_game_url
     jougen_4_pattern = re.compile(u"○")
     jougen_5_pattern = re.compile(u"◎")
     baha_pattern = re.compile(u"bahaFU")
-
+    # CSVファイルを読み込む
+    print("start-processCSVdata.")
+    print(csv_file_name)
     mycsv = csv.reader(open(csv_file_name, 'r', encoding="utf-8"), delimiter="|")
 
     for row in mycsv:
@@ -1347,6 +1362,7 @@ def processCSVdata(csv_file_name, json_data, image_wiki_url_list, image_game_url
                 name = value.replace("&br;", "")
                 name = name.replace("[]", "")
                 newdict["ja"] = name
+                print(name)
             elif index == 3:
                 # element
                 if value.find("火") >= 0:
@@ -1444,11 +1460,13 @@ def processCSVdata(csv_file_name, json_data, image_wiki_url_list, image_game_url
                 else:
                     newdict["hplv75"] = int(value)
             elif index == 17 and newdict["slvmax"] >= 15:
+                print("idx=17.")
                 if PROCESS_TYPE_SSR:
                     newdict["attacklv100"] = int(value)
                 else:
                     newdict["attacklv75"] = int(value)
             elif index == 18 and newdict["slvmax"] >= 20:
+                print("idx=18."+value)
                 newdict["hplv150"] = int(value)
             elif index == 19 and newdict["slvmax"] >= 20:
                 newdict["attacklv150"] = int(value)
@@ -1468,7 +1486,7 @@ def processCSVdata(csv_file_name, json_data, image_wiki_url_list, image_game_url
         image_game_url_list.append("http://gbf.game-a.mbga.jp/assets/img/sp/assets/weapon/b/" + key + "\n")
         image_wiki_url_list = list(OrderedDict.fromkeys(image_wiki_url_list))
         image_game_url_list = list(OrderedDict.fromkeys(image_game_url_list))
-
+    print("end-processCSVdata.")
     return json_data, image_wiki_url_list, image_game_url_list
 
 
@@ -1477,20 +1495,31 @@ if __name__ == '__main__':
     image_wiki_url_list = []
     image_game_url_list = []
 
-    json_data, image_wiki_url_list, image_game_url_list = processCSVdata(
-        os.path.join(path, "../txt_source/armData-ssr.txt"), json_data, image_wiki_url_list, image_game_url_list, True)
-    json_data, image_wiki_url_list, image_game_url_list = processCSVdata(
-        os.path.join(path, "../txt_source/armData-sr.txt"), json_data, image_wiki_url_list, image_game_url_list, False)
+    txtWeponSSR=["txt_source","armData-ssr.txt"]
+    txtWeponSR=["txt_source","armData-sr.txt"]
+    txtImgWiki=["txt_source","armImageWikiURLList.txt"]
+    txtImgGame=["txt_source","armImageGameURLList.txt"]
+    pathSSR = os.path.join(*txtWeponSSR)
+    pathSR = os.path.join(*txtWeponSR)
+    pathImgWiki = os.path.join(*txtImgWiki)
+    pathImgGame = os.path.join(*txtImgGame)
 
-    f = open(os.path.join(path, "../armData.json"), "w", encoding="utf-8")
+# コンソール出力する
+    print(os.path.join(pathBase, *txtWeponSSR))
+    json_data, image_wiki_url_list, image_game_url_list = processCSVdata(
+        os.path.join(pathBase, *txtWeponSSR), json_data, image_wiki_url_list, image_game_url_list, True)
+    json_data, image_wiki_url_list, image_game_url_list = processCSVdata(
+        os.path.join(pathBase, *txtWeponSR), json_data, image_wiki_url_list, image_game_url_list, False)
+
+    f = open(os.path.join(pathBase, "armData.json"), "w", encoding="utf-8")
     json.dump(json_data, f, ensure_ascii=False, indent=4)
     f.close()
 
-    f = open(os.path.join(path, "../txt_source/armImageWikiURLList.txt"), "w", encoding="utf-8")
+    f = open(os.path.join(pathBase, *txtImgWiki), "w", encoding="utf-8")
     for x in image_wiki_url_list:
         f.write(x)
     f.close()
-    f = open(os.path.join(path, "../txt_source/armImageGameURLList.txt"), "w", encoding="utf-8")
+    f = open(os.path.join(pathBase, *txtImgGame), "w", encoding="utf-8")
     for x in image_game_url_list:
         f.write(x)
     f.close()
