@@ -22617,7 +22617,7 @@
         "ja": "第十二猪行槍",
         "element": "fire",
         "type": "spear",
-        "skill1": "normalGirenL",
+        "skill1": "non",
         "skill2": "normalS",
         "element2": "fire",
         "skill3": "non",

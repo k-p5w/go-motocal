@@ -287,14 +287,14 @@ skillnamelist["normalSetsuna"] = {
     u"憎悪の刹那": "dark"
 }
 
-skillnamelist["normalGirenL"] = {
-    u"紅蓮の技錬": "fire",
-    u"霧氷の技錬": "water",
-    u"地裂の技錬": "earth",
-    u"乱気の技錬": "wind",
-    u"天光の技錬": "light",
-    u"奈落の技錬": "dark"
-}
+# skillnamelist["normalGirenL"] = {
+#     u"紅蓮の技錬": "fire",
+#     u"霧氷の技錬": "water",
+#     u"地裂の技錬": "earth",
+#     u"乱気の技錬": "wind",
+#     u"天光の技錬": "light",
+#     u"奈落の技錬": "dark"
+# }
 
 
 skillnamelist["normalKatsumiS"] = {
