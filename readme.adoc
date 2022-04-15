@@ -1,0 +1,33 @@
+= 元カレ計算機の新マニュアル
+
+== 使い方
+
+[source,powershell]
+.install.ps1
+----
+git clone https://github.com/k-p5w/go-motocal.git
+cd go-motocal
+npm install
+npm run build
+npm run start
+open localhost:8000
+----
+
+== TODO
+
+* [ ] データの最新化（自動化）
+** 武器
+** キャラ
+** 召喚
+
+*** スクレイピングツールで出来るようにする？
+
+やり方見るとWIKIのページを使うっぽいから
+スクレイピングじゃなくてもなんとかなりそう。
+
+
+* データ最新化（手動）
+
+** 武器
+
+https://gbf-wiki.com/index.php?cmd=edit&page=%C9%F0%B4%EFSSR
