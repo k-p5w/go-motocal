@@ -8,7 +8,8 @@ var HowTo = CreateClass({
             <div className="howTo">
                 <h2>この計算機について</h2>
                 <p>元カレ計算機（グラブル攻撃力計算機）は、入力された情報を元に、「どのような武器編成が最大の火力を出せるか」を比較算出するためのツールです。</p>
-                <p className="text-info">本計算機は「編成の比較をすること」がメインの計算機です。入力が面倒だし特定の武器編成の攻撃力だけ見られればいい！という方は <a href="http://gbf.xzz.jp">グラブル装備シミュレータ</a> のがオススメです。</p>
+                <P>更新されなくなったやつを更新できるように頑張っているモノです</P>
+                
 
                 <h2>使い方</h2>
                 <p>基本的に各項目を埋めていけば、それに従って結果が自動的に更新されます。(選択メニューは値を選択した時点、入力フォームは値を入力した後にフォーム外をクリックする等の操作を行った際に、新しい結果が算出されます。)</p>
@@ -67,9 +68,7 @@ var HowTo = CreateClass({
 
                 <hr/>
                 <h2>開発情報</h2>
-                <p>元カレ計算機は<a href="https://twitter.com/hsimyu" target="_blank">@hsimyu</a>さん引退後、有志によって開発を継続しています。</p>
-                <p>ソースコードは<a href="https://github.com/MotocalDevelopers/motocal" target="_blank">GitHub</a>にて公開しています。</p>
-                <p>ご要望のある方は<a href="https://goo.gl/forms/z1Z8ThAOJxZLAUxc2" target="_blank">Google フォーム</a>にてお願いします。</p>
+                <p>Contact TwitterID:Aeshma_Suda</p>
             </div>
         );
     },
